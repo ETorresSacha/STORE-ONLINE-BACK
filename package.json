@@ -4,7 +4,8 @@
   "description": "ESTA PROYECTO TRATA SOBRE UNA TIENDA ONLINE EN DONDE IMPLEMENTAREMOS LAS FUNCIONALIDADES DE FILTROS, RENDERIZADOS DE LAS CARDS, MERCADO PAGO, ENTRE OTTROS\r QUE A MEDIDA SE IRA DETALLANDO.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "express-session": "^1.17.3",
     "method-override": "^3.0.0",
     "mongoose": "^7.5.1",
+    "morgan": "^1.10.0",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0"
   },
