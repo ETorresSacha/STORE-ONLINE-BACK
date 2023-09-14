@@ -1,12 +1,15 @@
 const mongoose = require('mongoose');
 const clothes = require('../models/clothes')
 
-const putTheClothes = async (id) => {
+const putTheClothes = async (id,body) => {
+
   try {
-    
-    return "PUT RESULT" + id
+    const result = await clothes.findOneAndUpdate( { _id: id },body,{ new: true });
+    await result.save();
+
+  return result
   } catch (error) {
-    throw new Error('Database error');
+    throw new Error(error.message);
   }
 };
 

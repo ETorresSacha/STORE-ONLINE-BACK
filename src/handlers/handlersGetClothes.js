@@ -5,18 +5,40 @@ const getAllClothes = require("../controllers/controllersgGetAllClothes");
 
 // GET CLOTHES
 const getClothes = async (req, res) => {
+  const {title} = req.query
+  const {id} = req.params
+
     try {
-      const result = await getAllClothes();
-      res.status(200).json(result);
+      // ********************     ID     ********************
+      if(id){
+        const result = await getAllClothes(id);
+        return res.status(200).json(result);
+
+      }
+
+      // ********************     TITLE     ********************
+      else if(title){
+        const result = await getAllClothes(title);
+        return res.status(200).json(result);
+
+      }
+
+       // ********************     ALL     ********************
+      else{
+        const result = await getAllClothes();
+        return res.status(200).json(result);
+
+      }
+      
     } catch (error) {
-      res.status(400).json({ error: error.message });
+      return res.status(400).json({ error: error.message });
     }
   };
 
   // POST CLOTHES
 const postClothes = async (req, res) => {
     try {
-      const result = await postTheClothes();
+      const result = await postTheClothes(req.body);
       res.status(200).json(result);
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -27,7 +49,7 @@ const postClothes = async (req, res) => {
 const putClothes = async (req, res) => {
     const { id } = req.params
     try {
-      const result = await putTheClothes(id);
+      const result = await putTheClothes(id,req.body);
       res.status(200).json(result);
     } catch (error) {
       res.status(400).json({ error: error.message });

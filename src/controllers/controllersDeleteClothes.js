@@ -3,10 +3,10 @@ const clothes = require('../models/clothes')
 
 const deleteTheClothes = async (id) => {
   try {
-    
-    return "DELETE RESULT"+id
+    const result = await clothes.findByIdAndDelete(id);
+    return result
   } catch (error) {
-    throw new Error('Database error');
+    throw new Error(error.message);
   }
 };
 

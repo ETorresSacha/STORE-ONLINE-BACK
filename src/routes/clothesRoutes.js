@@ -4,6 +4,7 @@ const { getClothes, postClothes, putClothes, deleteClothes } = require("../handl
 const clothesRoute = Router();
 
 clothesRoute.get("/",getClothes)
+clothesRoute.get("/:id",getClothes)
 clothesRoute.post("/",postClothes)
 clothesRoute.put("/:id",putClothes)
 clothesRoute.delete("/:id",deleteClothes)
