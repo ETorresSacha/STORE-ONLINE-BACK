@@ -2,6 +2,7 @@ const express = require('express')
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const path = require('path')
+const routes = require("./routes/index")
 const morgan = require('morgan')
 require("dotenv").config()
 
@@ -54,9 +55,7 @@ app.use((err, req, res, next) => {
 // Global Variables
 
 // Routes
-app.get('/',(req,res)=>{
-    res.send('hola')
-})
+app.use('/',routes)
 
 // Static files
 
