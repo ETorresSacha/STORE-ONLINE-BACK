@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const clothes = require('../models/clothes')
+const clothes = require('../../models/clothes')
 
 const putTheClothes = async (id,body) => {
 

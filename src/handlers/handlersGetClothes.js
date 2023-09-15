@@ -1,8 +1,8 @@
-const deleteTheClothes = require("../controllers/controllersDeleteClothes");
-const ClothesId = require("../controllers/controllersGetClothesId");
-const postTheClothes = require("../controllers/controllersPostClothes");
-const putTheClothes = require("../controllers/controllersPutClothes");
-const getAllClothes = require("../controllers/controllersgGetAllClothes");
+const deleteTheClothes = require("../controllers/clothes/controllersDeleteClothes");
+const ClothesId = require("../controllers/clothes/controllersGetClothesId");
+const postTheClothes = require("../controllers/clothes/controllersPostClothes");
+const putTheClothes = require("../controllers/clothes/controllersPutClothes");
+const getAllClothes = require("../controllers/clothes/controllersgGetAllClothes");
 
 //! GET CLOTHES
 const getClothes = async (req, res) => {
