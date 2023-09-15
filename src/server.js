@@ -8,7 +8,6 @@ require("dotenv").config()
 
 // Initializations
 const app = express()
-app.use(morgan('dev'));
 
 // Settings
 app.set('port',process.env.PORT || 3000)
@@ -38,6 +37,8 @@ app.use((req, res, next) => {
 
 // Middlewares
 app.use(express.urlencoded({extended:false})) // Sirve para que la aplicación Express analice automáticamente los datos enviados en un formulario HTML cuando el cliente realiza una solicitud POST.
+app.use(morgan('dev'));
+app.use(express.json())
 
 //! MIDDLEWARE DE MANEJO DE ERRORES
 //TODO--> "este  se utiliza para capturar errores en una aplicación Node.js y responder con una respuesta de error adecuada, 
