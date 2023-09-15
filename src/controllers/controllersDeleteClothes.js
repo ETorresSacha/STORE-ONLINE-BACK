@@ -6,7 +6,7 @@ const deleteTheClothes = async (id) => {
     const result = await clothes.findByIdAndDelete(id);
     return result
   } catch (error) {
-    throw new Error(error.message);
+    throw new Error("No se encontró resultado");
   }
 };
 

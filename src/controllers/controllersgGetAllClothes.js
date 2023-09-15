@@ -1,19 +1,11 @@
 const mongoose = require('mongoose');
 const clothes = require('../models/clothes')
 
-const getAllClothes = async (id,title) => {
+const getAllClothes = async (title) => {
   
-
   try {
-    // ********************     ID     ********************
-    if(id){
-      const result = await clothes.findById(id)
-      return result
-
-    }
     // ********************     TITLE     ********************
-
-    else if(title){
+    if(title){
       const result = await clothes.find({
         title: { $regex: title, $options: "i" },
       });
