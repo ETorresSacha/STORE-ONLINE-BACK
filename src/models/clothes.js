@@ -11,7 +11,7 @@ const clothesSchema = new Schema({
         requered: true
     },
     image:{
-        type: String,
+        type: [String],
         requered: true
     },
     price:{
